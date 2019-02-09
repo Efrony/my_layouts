@@ -163,8 +163,66 @@ main {
   display: flex;
   justify-content: space-between;
 }
-.headFoto div {
+.headFoto figure {
   width: 350px;
   height: 400px;
   background-image: url(../image/backLight.jpg);
+  overflow: hidden;
+  cursor: pointer;
+}
+.headFoto figure:hover .insideHover {
+  background-color: rgba(185, 70, 173, 0.4);
+}
+.headFoto figure:hover .insideHover i {
+  opacity: 1;
+}
+.headFoto figure:hover figcaption {
+  margin-top: -130px;
+  /*
+            animation-play-state: running;
+            animation-fill-mode: forwards;
+            animation-duration: .3s;*/
+}
+.headFoto figure .insideHover {
+  width: inherit;
+  height: inherit;
+  background-color: rgba(185, 70, 173, 0);
+  transition: .5s;
+  color: #fff;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headFoto figure .insideHover i {
+  opacity: 0;
+  transition: .5s;
+}
+.headFoto figure figcaption {
+  margin-top: -50px;
+  color: #fff;
+  text-align: center;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: .5s;
+  /*animation-name: upHover;
+            animation-duration: .3s;
+            animation-play-state: paused;
+            animation-direction: alternate;
+            @keyframes upHover {
+                from {
+                    margin-top: -50px;
+                }
+                to {
+                    margin-top: -130px;
+                }*/
+}
+.headFoto figure figcaption h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  padding-bottom: 15px;
+}
+.headFoto figure figcaption p {
+  font-size: 14px;
+  line-height: 23px;
 }

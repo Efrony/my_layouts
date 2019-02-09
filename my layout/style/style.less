@@ -167,9 +167,67 @@ main {
     margin-top: -200px;
     display: flex;
     justify-content: space-between;
-    div {
+    figure {
         width: 350px;
         height: 400px;
         background-image: url(../image/backLight.jpg);
+        overflow: hidden;
+        cursor: pointer;
+        &:hover .insideHover {
+            background-color: rgba(185, 70, 173, .4);
+        }
+        &:hover .insideHover i {
+            opacity: 1;
+        }
+        &:hover figcaption {
+            margin-top: -130px;
+            /*
+            animation-play-state: running;
+            animation-fill-mode: forwards;
+            animation-duration: .3s;*/
+        }
+        .insideHover {
+            width: inherit;
+            height: inherit;
+            background-color: rgba(185, 70, 173, 0);
+            transition: .5s;
+            color: #fff;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                opacity: 0;
+                transition: .5s;
+            }
+        }
+        figcaption {
+            margin-top: -50px;
+            color: #fff;
+            text-align: center;
+            padding: 15px 25px;
+            background-color: rgba(0, 0, 0, .7);
+            transition: .5s;
+            /*animation-name: upHover;
+            animation-duration: .3s;
+            animation-play-state: paused;
+            animation-direction: alternate;
+            @keyframes upHover {
+                from {
+                    margin-top: -50px;
+                }
+                to {
+                    margin-top: -130px;
+                }*/
+            h6 {
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 17px;
+                padding-bottom: 15px;
+            }
+            p {
+                font-size: 14px;
+                line-height: 23px;
+            }
+        }
     }
 }
