@@ -13,6 +13,10 @@ body {
 .widthContainerMax {
     width: 1140px;
     margin: 0 auto;
+    @media (max-width: 1140px) {
+        width: 800px;
+        margin: 0 auto;
+    }
 }
 
 header {
@@ -167,6 +171,7 @@ main {
     margin-top: -200px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 80px;
     figure {
         width: 350px;
         height: 400px;
@@ -227,6 +232,43 @@ main {
             p {
                 font-size: 14px;
                 line-height: 23px;
+            }
+        }
+    }
+}
+
+.posuere {
+    margin-top: 80px;
+    display: flex;
+    .posuereImg {
+        width: 50%;
+        .posuereImgBorder {
+            border: 1px solid gray;
+            padding: 15px;
+            max-width: 506px;
+            div {
+                background-image: url(../image/backLight.jpg);
+                width: 474px;
+                height: 356px;
+            }
+        }
+    }
+    .posuereText {
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px;
+        article {
+            width: 50%;
+            padding-left: 10px;
+            h6 {
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 17px;
+                padding-bottom: 15px;
+                color: @mainColor;
+            }
+            p {
+                color: #fff;
             }
         }
     }
