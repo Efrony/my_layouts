@@ -162,22 +162,26 @@ header {
     }
 }
 
-main {
-    .widthContainerMax;
-    height: 500px;
-}
-
 .headFoto {
+    .widthContainerMax;
     margin-top: -200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 80px;
+    @media (max-width: 1140px) {
+        margin-top: -200px;
+    }
     figure {
         width: 350px;
         height: 400px;
         background-image: url(../image/backLight.jpg);
         overflow: hidden;
         cursor: pointer;
+        @media (max-width: 1140px) {
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
         &:hover .insideHover {
             background-color: rgba(185, 70, 173, .4);
         }
@@ -194,7 +198,6 @@ main {
         .insideHover {
             width: inherit;
             height: inherit;
-            background-color: rgba(185, 70, 173, 0);
             transition: .5s;
             color: #fff;
             font-size: 35px;
@@ -237,18 +240,33 @@ main {
     }
 }
 
+.hr {
+    .widthContainerMax;
+    border: .5px solid grey;
+}
+
 .posuere {
-    margin-top: 80px;
+    .widthContainerMax;
+    padding-top: 80px;
+    padding-bottom: 80px;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     .posuereImg {
         width: 50%;
+        @media (max-width: 1140px) {
+            width: 100%;
+        }
         .posuereImgBorder {
             border: 1px solid gray;
             padding: 15px;
             max-width: 506px;
-            div {
+            @media (max-width: 1140px) {
+                margin: 0 auto;
+            }
+            .intoImg {
                 background-image: url(../image/backLight.jpg);
-                width: 474px;
+                width: 100%;
                 height: 356px;
             }
         }
@@ -258,17 +276,92 @@ main {
         display: flex;
         flex-wrap: wrap;
         padding: 15px;
+        @media (max-width: 1140px) {
+            width: 100%;
+        }
         article {
             width: 50%;
             padding-left: 10px;
-            h6 {
+            span {
                 font-family: Georgia, "Times New Roman", Times, serif;
-                font-size: 17px;
+                font-size: 20px;
                 padding-bottom: 15px;
                 color: @mainColor;
             }
             p {
                 color: #fff;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+.nullaEuBlock {
+    background-image: url(../image/back.jpg);
+    width: 100%;
+    background-position: center;
+}
+
+.nullaEu {
+    .widthContainerMax;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    .nullaEuText {
+        margin-bottom: 80px;
+        span {
+            font-size: 14px;
+            line-height: 23px;
+            color: #fff;
+            display: block;
+            text-align: center;
+        }
+        p {
+            color: #fff;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 30px;
+            text-align: center;
+        }
+        .hrColor {
+            width: 8%;
+            border: 2.5px solid darken(@mainColor, 10);
+            background-color: darken(@mainColor, 10);
+            border-radius: 2.5px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+    }
+    .nullaEuFoto {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .nullaEuImg {
+            height: 260px;
+            width: 30%;
+            background-image: url(../image/backLight.jpg);
+            margin-bottom: 50px;
+            cursor: pointer;
+            @media (max-width: 1140px) {
+                width: 47%;
+            }
+            &:hover .insideHover {
+                background-color: rgba(185, 70, 173, .4);
+            }
+            &:hover .insideHover i {
+                opacity: 1;
+            }
+            .insideHover {
+                width: 100%;
+                height: inherit;
+                transition: .5s;
+                color: #fff;
+                font-size: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                    opacity: 0;
+                    transition: .5s;
+                }
             }
         }
     }

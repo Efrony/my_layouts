@@ -177,22 +177,25 @@ header {
   border: 1px solid #fff;
   background-color: rgba(0, 0, 0, 0.3);
 }
-main {
+.headFoto {
   width: 1140px;
   margin: 0 auto;
-  height: 500px;
+  margin-top: -200px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 80px;
 }
 @media (max-width: 1140px) {
-  main {
+  .headFoto {
     width: 800px;
     margin: 0 auto;
   }
 }
-.headFoto {
-  margin-top: -200px;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 80px;
+@media (max-width: 1140px) {
+  .headFoto {
+    margin-top: -200px;
+  }
 }
 .headFoto figure {
   width: 350px;
@@ -200,6 +203,12 @@ main {
   background-image: url(../image/backLight.jpg);
   overflow: hidden;
   cursor: pointer;
+}
+@media (max-width: 1140px) {
+  .headFoto figure {
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
 }
 .headFoto figure:hover .insideHover {
   background-color: rgba(185, 70, 173, 0.4);
@@ -217,7 +226,6 @@ main {
 .headFoto figure .insideHover {
   width: inherit;
   height: inherit;
-  background-color: rgba(185, 70, 173, 0);
   transition: .5s;
   color: #fff;
   font-size: 35px;
@@ -257,21 +265,53 @@ main {
   font-size: 14px;
   line-height: 23px;
 }
+.hr {
+  width: 1140px;
+  margin: 0 auto;
+  border: .5px solid grey;
+}
+@media (max-width: 1140px) {
+  .hr {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
 .posuere {
-  margin-top: 80px;
+  width: 1140px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 1140px) {
+  .posuere {
+    width: 800px;
+    margin: 0 auto;
+  }
 }
 .posuere .posuereImg {
   width: 50%;
+}
+@media (max-width: 1140px) {
+  .posuere .posuereImg {
+    width: 100%;
+  }
 }
 .posuere .posuereImg .posuereImgBorder {
   border: 1px solid gray;
   padding: 15px;
   max-width: 506px;
 }
-.posuere .posuereImg .posuereImgBorder div {
+@media (max-width: 1140px) {
+  .posuere .posuereImg .posuereImgBorder {
+    margin: 0 auto;
+  }
+}
+.posuere .posuereImg .posuereImgBorder .intoImg {
   background-image: url(../image/backLight.jpg);
-  width: 474px;
+  width: 100%;
   height: 356px;
 }
 .posuere .posuereText {
@@ -280,16 +320,100 @@ main {
   flex-wrap: wrap;
   padding: 15px;
 }
+@media (max-width: 1140px) {
+  .posuere .posuereText {
+    width: 100%;
+  }
+}
 .posuere .posuereText article {
   width: 50%;
   padding-left: 10px;
 }
-.posuere .posuereText article h6 {
+.posuere .posuereText article span {
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 17px;
+  font-size: 20px;
   padding-bottom: 15px;
   color: #b946ad;
 }
 .posuere .posuereText article p {
   color: #fff;
+  padding-top: 20px;
+}
+.nullaEuBlock {
+  background-image: url(../image/back.jpg);
+  width: 100%;
+  background-position: center;
+}
+.nullaEu {
+  width: 1140px;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+@media (max-width: 1140px) {
+  .nullaEu {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+.nullaEu .nullaEuText {
+  margin-bottom: 80px;
+}
+.nullaEu .nullaEuText span {
+  font-size: 14px;
+  line-height: 23px;
+  color: #fff;
+  display: block;
+  text-align: center;
+}
+.nullaEu .nullaEuText p {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 30px;
+  text-align: center;
+}
+.nullaEu .nullaEuText .hrColor {
+  width: 8%;
+  border: 2.5px solid #94388a;
+  background-color: #94388a;
+  border-radius: 2.5px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.nullaEu .nullaEuFoto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.nullaEu .nullaEuFoto .nullaEuImg {
+  height: 260px;
+  width: 30%;
+  background-image: url(../image/backLight.jpg);
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+@media (max-width: 1140px) {
+  .nullaEu .nullaEuFoto .nullaEuImg {
+    width: 47%;
+  }
+}
+.nullaEu .nullaEuFoto .nullaEuImg:hover .insideHover {
+  background-color: rgba(185, 70, 173, 0.4);
+}
+.nullaEu .nullaEuFoto .nullaEuImg:hover .insideHover i {
+  opacity: 1;
+}
+.nullaEu .nullaEuFoto .nullaEuImg .insideHover {
+  width: 100%;
+  height: inherit;
+  transition: .5s;
+  color: #fff;
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nullaEu .nullaEuFoto .nullaEuImg .insideHover i {
+  opacity: 0;
+  transition: .5s;
 }
