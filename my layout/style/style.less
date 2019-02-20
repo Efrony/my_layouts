@@ -10,12 +10,39 @@ body {
 }
 
 @mainColor: #B946AD;
+
+/*--- SCREEN SIZE ---*/
+
+@smallScreen: 576px;
+@mediumScreen: 768px;
+@largeScreen: 992px;
+@exLargeScreen: 1200px;
+
+/*--- CONYAINER SIZE ---*/
+
+@smallContainer: 540px;
+@mediumContainer: 720px;
+@largeContainer: 960px;
+@exLargeContainer: 1140px;
+
+/*----------------------*/
+
 .widthContainerMax {
-    width: 1140px;
+    width: @exLargeContainer;
     margin: 0 auto;
-    @media (max-width: 1140px) {
-        width: 800px;
-        margin: 0 auto;
+    @media (max-width: @exLargeScreen) {
+        width: @largeContainer;
+    }
+    @media (max-width: @largeScreen) {
+        width: @mediumContainer;
+    }
+    @media (max-width: @mediumScreen) {
+        width: @smallContainer;
+    }
+    @media (max-width: @smallScreen) {
+        width: auto;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
@@ -52,7 +79,7 @@ header {
         }
         i:nth-child(3):hover + form {
             opacity: 1;
-            transition: .5s;
+            transition: .3s;
             z-index: 1;
         }
         form {
@@ -103,22 +130,37 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: @mediumScreen) {
+            flex-direction: column;
+            align-content: center;
+        }
+        @media (max-width: @smallScreen) {
+            flex-direction: row;
+        }
         span {
             color: #fff;
             font-family: Georgia, "Times New Roman", Times, serif;
             font-size: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         ul {
             font-size: 14px;
             color: #fff;
             list-style-type: none;
             display: flex;
+            @media (max-width: @smallScreen) {
+                flex-direction: column;
+            }
             li {
                 margin-left: 23px;
                 display: block;
                 padding: 30px 0;
                 cursor: pointer;
-                transition: .5s;
+                transition: .2s;
+                @media (max-width: @smallScreen) {
+                    padding: 10px 0;
+                }
                 &:nth-child(1),
                 &:hover {
                     color: @mainColor;
@@ -153,7 +195,7 @@ header {
         cursor: pointer;
         text-transform: uppercase;
         font-size: 14px;
-        transition: .5s;
+        transition: .2s;
         border: 1px solid @mainColor;
         &:hover {
             border: 1px solid #fff;
@@ -169,18 +211,30 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 80px;
-    @media (max-width: 1140px) {
+    @media (max-width: @exLargeScreen) {
         margin-top: -200px;
     }
+    @media (max-width: @mediumScreen) {
+        margin-top: -100px;
+    }
     figure {
-        width: 350px;
+        width: 30.5%;
         height: 400px;
         background-image: url(../image/backLight.jpg);
         overflow: hidden;
         cursor: pointer;
-        @media (max-width: 1140px) {
-            margin: 0 auto;
+        @media (max-width: @exLargeScreen) {
             margin-bottom: 40px;
+            height: 330px;
+        }
+        @media (max-width: @largeScreen) {
+            height: 250px;
+        }
+        @media (max-width: @mediumScreen) {
+            height: 400px;
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 30px;
         }
         &:hover .insideHover {
             background-color: rgba(185, 70, 173, .4);
@@ -196,8 +250,8 @@ header {
             animation-duration: .3s;*/
         }
         .insideHover {
-            width: inherit;
-            height: inherit;
+            width: 100%;
+            height: 100%;
             transition: .5s;
             color: #fff;
             font-size: 35px;
@@ -254,14 +308,14 @@ header {
     justify-content: space-between;
     .posuereImg {
         width: 50%;
-        @media (max-width: 1140px) {
+        @media (max-width: @mediumScreen) {
             width: 100%;
         }
         .posuereImgBorder {
             border: 1px solid gray;
             padding: 15px;
             max-width: 506px;
-            @media (max-width: 1140px) {
+            @media (max-width: @mediumScreen) {
                 margin: 0 auto;
             }
             .intoImg {
@@ -276,12 +330,15 @@ header {
         display: flex;
         flex-wrap: wrap;
         padding: 15px;
-        @media (max-width: 1140px) {
+        @media (max-width: @mediumScreen) {
             width: 100%;
         }
         article {
             width: 50%;
             padding-left: 10px;
+            @media (max-width: @smallScreen) {
+                width: 100%;
+            }
             span {
                 font-family: Georgia, "Times New Roman", Times, serif;
                 font-size: 20px;
@@ -340,8 +397,11 @@ header {
             background-image: url(../image/backLight.jpg);
             margin-bottom: 50px;
             cursor: pointer;
-            @media (max-width: 1140px) {
+            @media (max-width: @exLargeScreen) {
                 width: 47%;
+            }
+            @media (max-width: @smallScreen) {
+                width: 100%;
             }
             &:hover .insideHover {
                 background-color: rgba(185, 70, 173, .4);
@@ -366,3 +426,97 @@ header {
         }
     }
 }
+
+.artem {
+    color: #fff;
+    .widthContainerMax;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .testArtem {
+        height: auto;
+        width: 32%;
+        background-color: #333;
+        margin-bottom: 2%;
+        @media (max-width: @largeScreen) {
+            width: 48.5%;
+            margin-bottom: 3%;
+        }
+    }
+    .center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background-color: #333;
+        .blockIn {
+            height: auto;
+            width: 32%;
+            background-color: darken(#333, 5%);
+        }
+    }
+}
+
+.doe {
+    display: flex;
+    justify-content: space-between;
+}
+
+figure {
+    width: 22%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
+    .fotoDoe {
+        position: relative;
+        height: auto;
+        &:hover .insideHover {
+            opacity: 1;
+        }
+        &:hover + figcaption {
+            background-color: @mainColor;
+            color: #fff;
+        }
+        img {
+            width: 100%;
+        }
+        .insideHover {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transition: .4s;
+            color: #fff;
+            font-size: 35px;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: rgba(185, 70, 173, .4);
+            i {
+                margin-top: 43%;
+            }
+        }
+    }
+    figcaption {
+        background-color: #fff;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: -2px;
+        transition: .4s;
+        p:first-child {
+            font-size: 20px;
+        }
+        animation-name: mymove;
+        &:hover {
+            background-color: @mainColor;
+            animation-name: mymove;
+            animation-duration: 1s;
+            animation-timing-function: ease;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+@keyframes mymove {
+    100% {
+        color: #fff;
+    }
+}
+/*https://webformyself.com/prostaya-css-animaciya-s-pomoshhyu-keyframes/  */

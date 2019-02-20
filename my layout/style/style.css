@@ -8,14 +8,33 @@ body {
   font-family: Verdana, Geneva, sans-serif;
   background-color: #1D1F21;
 }
+/*--- SCREEN SIZE ---*/
+/*--- CONYAINER SIZE ---*/
+/*----------------------*/
 .widthContainerMax {
   width: 1140px;
   margin: 0 auto;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .widthContainerMax {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .widthContainerMax {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .widthContainerMax {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .widthContainerMax {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 header {
@@ -30,10 +49,26 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .headContainer {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .headContainer {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .headContainer {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .headContainer {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .headContainer address {
@@ -59,7 +94,7 @@ header {
 }
 .headContainer .headButton i:nth-child(3):hover + form {
   opacity: 1;
-  transition: .5s;
+  transition: .3s;
   z-index: 1;
 }
 .headContainer .headButton form {
@@ -109,16 +144,45 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .navBackground nav {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .navBackground nav {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .navBackground nav {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .navBackground nav {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .navBackground nav {
+    flex-direction: column;
+    align-content: center;
+  }
+}
+@media (max-width: 576px) {
+  .navBackground nav {
+    flex-direction: row;
   }
 }
 .navBackground nav span {
   color: #fff;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .navBackground nav ul {
   font-size: 14px;
@@ -126,12 +190,22 @@ header {
   list-style-type: none;
   display: flex;
 }
+@media (max-width: 576px) {
+  .navBackground nav ul {
+    flex-direction: column;
+  }
+}
 .navBackground nav ul li {
   margin-left: 23px;
   display: block;
   padding: 30px 0;
   cursor: pointer;
-  transition: .5s;
+  transition: .2s;
+}
+@media (max-width: 576px) {
+  .navBackground nav ul li {
+    padding: 10px 0;
+  }
 }
 .navBackground nav ul li:nth-child(1),
 .navBackground nav ul li:hover {
@@ -144,10 +218,26 @@ header {
   color: #fff;
   text-align: center;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .centralText {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .centralText {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .centralText {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .centralText {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .centralText p:nth-child(1) {
@@ -170,7 +260,7 @@ header {
   cursor: pointer;
   text-transform: uppercase;
   font-size: 14px;
-  transition: .5s;
+  transition: .2s;
   border: 1px solid #b946ad;
 }
 .centralText button:hover {
@@ -186,28 +276,62 @@ header {
   justify-content: space-between;
   margin-bottom: 80px;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .headFoto {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
   }
 }
-@media (max-width: 1140px) {
+@media (max-width: 992px) {
+  .headFoto {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .headFoto {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .headFoto {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+@media (max-width: 1200px) {
   .headFoto {
     margin-top: -200px;
   }
 }
+@media (max-width: 768px) {
+  .headFoto {
+    margin-top: -100px;
+  }
+}
 .headFoto figure {
-  width: 350px;
+  width: 30.5%;
   height: 400px;
   background-image: url(../image/backLight.jpg);
   overflow: hidden;
   cursor: pointer;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .headFoto figure {
-    margin: 0 auto;
     margin-bottom: 40px;
+    height: 330px;
+  }
+}
+@media (max-width: 992px) {
+  .headFoto figure {
+    height: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .headFoto figure {
+    height: 400px;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
 }
 .headFoto figure:hover .insideHover {
@@ -224,8 +348,8 @@ header {
             animation-duration: .3s;*/
 }
 .headFoto figure .insideHover {
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
   transition: .5s;
   color: #fff;
   font-size: 35px;
@@ -270,10 +394,26 @@ header {
   margin: 0 auto;
   border: .5px solid grey;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .hr {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .hr {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .hr {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .hr {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .posuere {
@@ -285,16 +425,32 @@ header {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .posuere {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .posuere {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .posuere {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .posuere {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .posuere .posuereImg {
   width: 50%;
 }
-@media (max-width: 1140px) {
+@media (max-width: 768px) {
   .posuere .posuereImg {
     width: 100%;
   }
@@ -304,7 +460,7 @@ header {
   padding: 15px;
   max-width: 506px;
 }
-@media (max-width: 1140px) {
+@media (max-width: 768px) {
   .posuere .posuereImg .posuereImgBorder {
     margin: 0 auto;
   }
@@ -320,7 +476,7 @@ header {
   flex-wrap: wrap;
   padding: 15px;
 }
-@media (max-width: 1140px) {
+@media (max-width: 768px) {
   .posuere .posuereText {
     width: 100%;
   }
@@ -328,6 +484,11 @@ header {
 .posuere .posuereText article {
   width: 50%;
   padding-left: 10px;
+}
+@media (max-width: 576px) {
+  .posuere .posuereText article {
+    width: 100%;
+  }
 }
 .posuere .posuereText article span {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -350,10 +511,26 @@ header {
   padding-top: 80px;
   padding-bottom: 30px;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .nullaEu {
-    width: 800px;
-    margin: 0 auto;
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .nullaEu {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .nullaEu {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .nullaEu {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .nullaEu .nullaEuText {
@@ -392,9 +569,14 @@ header {
   margin-bottom: 50px;
   cursor: pointer;
 }
-@media (max-width: 1140px) {
+@media (max-width: 1200px) {
   .nullaEu .nullaEuFoto .nullaEuImg {
     width: 47%;
+  }
+}
+@media (max-width: 576px) {
+  .nullaEu .nullaEuFoto .nullaEuImg {
+    width: 100%;
   }
 }
 .nullaEu .nullaEuFoto .nullaEuImg:hover .insideHover {
@@ -417,3 +599,118 @@ header {
   opacity: 0;
   transition: .5s;
 }
+.artem {
+  color: #fff;
+  width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media (max-width: 1200px) {
+  .artem {
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .artem {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .artem {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .artem {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.artem .testArtem {
+  height: auto;
+  width: 32%;
+  background-color: #333;
+  margin-bottom: 2%;
+}
+@media (max-width: 992px) {
+  .artem .testArtem {
+    width: 48.5%;
+    margin-bottom: 3%;
+  }
+}
+.artem .center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #333;
+}
+.artem .center .blockIn {
+  height: auto;
+  width: 32%;
+  background-color: #262626;
+}
+.doe {
+  display: flex;
+  justify-content: space-between;
+}
+figure {
+  width: 22%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+figure .fotoDoe {
+  position: relative;
+  height: auto;
+}
+figure .fotoDoe:hover .insideHover {
+  opacity: 1;
+}
+figure .fotoDoe:hover + figcaption {
+  background-color: #b946ad;
+  color: #fff;
+}
+figure .fotoDoe img {
+  width: 100%;
+}
+figure .fotoDoe .insideHover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: .4s;
+  color: #fff;
+  font-size: 35px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(185, 70, 173, 0.4);
+}
+figure .fotoDoe .insideHover i {
+  margin-top: 43%;
+}
+figure figcaption {
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: -2px;
+  transition: .4s;
+  animation-name: mymove;
+}
+figure figcaption p:first-child {
+  font-size: 20px;
+}
+figure figcaption:hover {
+  background-color: #b946ad;
+  animation-name: mymove;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes mymove {
+  100% {
+    color: #fff;
+  }
+}
+/*https://webformyself.com/prostaya-css-animaciya-s-pomoshhyu-keyframes/  */
