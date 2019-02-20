@@ -236,31 +236,27 @@ header {
             margin: 0 auto;
             margin-bottom: 30px;
         }
-        &:hover .insideHover {
-            background-color: rgba(185, 70, 173, .4);
-        }
-        &:hover .insideHover i {
-            opacity: 1;
-        }
-        &:hover figcaption {
-            margin-top: -130px;
-            /*
-            animation-play-state: running;
-            animation-fill-mode: forwards;
-            animation-duration: .3s;*/
-        }
         .insideHover {
             width: 100%;
             height: 100%;
-            transition: .5s;
+            transition: .3s ease-in-out;
             color: #fff;
             font-size: 35px;
             display: flex;
             justify-content: center;
             align-items: center;
+            &:hover {
+                background-color: rgba(185, 70, 173, .4);
+            }
+            &:hover i {
+                opacity: 1;
+            }
+            &:hover +figcaption {
+                margin-top: -130px;
+            }
             i {
                 opacity: 0;
-                transition: .5s;
+                transition: .3s ease-in-out;
             }
         }
         figcaption {
@@ -269,18 +265,11 @@ header {
             text-align: center;
             padding: 15px 25px;
             background-color: rgba(0, 0, 0, .7);
-            transition: .5s;
-            /*animation-name: upHover;
-            animation-duration: .3s;
-            animation-play-state: paused;
-            animation-direction: alternate;
-            @keyframes upHover {
-                from {
-                    margin-top: -50px;
-                }
-                to {
-                    margin-top: -130px;
-                }*/
+            transition: .3s ease-in-out;
+            &:hover {
+                background-color: rgba(0, 0, 0, .7);
+                margin-top: -130px;
+            }
             h6 {
                 font-family: Georgia, "Times New Roman", Times, serif;
                 font-size: 17px;
@@ -472,6 +461,8 @@ figure {
         }
         &:hover + figcaption {
             background-color: @mainColor;
+        }
+        &:hover + figcaption p {
             color: #fff;
         }
         img {
@@ -499,24 +490,33 @@ figure {
         padding: 20px 0;
         margin-top: -2px;
         transition: .4s;
+        p {
+            transition: .5s .7s;
+        }
         p:first-child {
             font-size: 20px;
         }
         animation-name: mymove;
         &:hover {
             background-color: @mainColor;
-            animation-name: mymove;
-            animation-duration: 1s;
-            animation-timing-function: ease;
-            animation-delay: 2s;
-            animation-iteration-count: infinite;
+        }
+        &:hover p {
+            color: #fff;
+            /*transition-property: color;----------------------*/
+            /*изменяемый параметр, можно не указывать, по-умолчанию все параметры.*/
+            /*transition-duration: .5s;------------------------*/
+            /*Продолжительность перехода*/
+            /*transition-delay: .7s;----------------------------*/
+            /*Задержка перехода*/
+            /*transition-timing-function: ease-in-out;-----------*/
+            /*ease	Функция по умолчанию, переход начинается медленно, разгоняется быстро и замедляется в конце. Соответствует cubic-bezier(0.25,0.1,0.25,1).
+            linear	Переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Соответствует cubic-bezier(0,0,1,1).
+            ease-in	Переход начинается медленно, а затем плавно ускоряется в конце. Соответствует cubic-bezier(0.42,0,1,1).
+            ease-out	Переход начинается быстро и плавно замедляется в конце. Соответствует cubic-bezier(0,0,0.58,1).
+            ease-in-out	Переход медленно начинается и медленно заканчивается. Соответствует cubic-bezier(0.42,0,0.58,1).
+            cubic-bezier(x1, y1, x2, y2)	Позволяет вручную установить значения от 0 до 1 для кривой ускорения. На этом сайте вы сможете построить любую траекторию перехода.
+            initial	Устанавливает значение свойства в значение по умолчанию.
+            inherit	Наследует значение свойства от родительского элемента.*/
         }
     }
 }
-
-@keyframes mymove {
-    100% {
-        color: #fff;
-    }
-}
-/*https://webformyself.com/prostaya-css-animaciya-s-pomoshhyu-keyframes/  */
