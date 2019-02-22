@@ -46,6 +46,23 @@ body {
     }
 }
 
+button {
+    border: none;
+    outline: none;
+    background-color: @mainColor;
+    padding: 12px 26px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: .2s;
+    border: 1px solid @mainColor;
+    &:hover {
+        border: 1px solid #fff;
+        background-color: rgba(0, 0, 0, .3);
+    }
+}
+
 header {
     width: 100%;
     background-color: rgb(22, 28, 33);
@@ -185,21 +202,8 @@ header {
         line-height: 30px;
         font-size: 14px;
         margin-bottom: 45px;
-    }
-    button {
-        border: none;
-        outline: none;
-        background-color: @mainColor;
-        padding: 12px 26px;
-        color: #fff;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 14px;
-        transition: .2s;
-        border: 1px solid @mainColor;
-        &:hover {
-            border: 1px solid #fff;
-            background-color: rgba(0, 0, 0, .3);
+        @media (max-width: @mediumScreen) {
+            margin: 0;
         }
     }
 }
@@ -350,8 +354,7 @@ header {
 
 .nullaEu {
     .widthContainerMax;
-    padding-top: 80px;
-    padding-bottom: 30px;
+    padding: 80px 0;
     .nullaEuText {
         margin-bottom: 80px;
         span {
@@ -380,6 +383,7 @@ header {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: -50px;
         .nullaEuImg {
             height: 260px;
             width: 30%;
@@ -416,6 +420,86 @@ header {
     }
 }
 
+.doe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    figure {
+        width: 22%;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
+        @media (max-width: @mediumScreen) {
+            width: 47%;
+            margin-bottom: 40px;
+        }
+        .fotoDoe {
+            position: relative;
+            height: auto;
+            &:hover .insideHover {
+                opacity: 1;
+            }
+            &:hover + figcaption {
+                background-color: @mainColor;
+            }
+            &:hover + figcaption p {
+                color: #fff;
+            }
+            img {
+                width: 100%;
+            }
+            .insideHover {
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                transition: .4s;
+                color: #fff;
+                font-size: 35px;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                background-color: rgba(185, 70, 173, .4);
+                i {
+                    margin-top: 43%;
+                }
+            }
+        }
+        figcaption {
+            background-color: #fff;
+            text-align: center;
+            padding: 6% 0;
+            margin-top: -2px;
+            transition: .4s;
+            p {
+                transition: .5s .7s;
+            }
+            p:first-child {
+                font-size: 20px;
+            }
+            animation-name: mymove;
+            &:hover {
+                background-color: @mainColor;
+            }
+            &:hover p {
+                color: #fff;
+                /*transition-property: color;----------------------*/
+                /*изменяемый параметр, можно не указывать, по-умолчанию все параметры.*/
+                /*transition-duration: .5s;------------------------*/
+                /*Продолжительность перехода*/
+                /*transition-delay: .7s;----------------------------*/
+                /*Задержка перехода*/
+                /*transition-timing-function: ease-in-out;-----------*/
+                /*ease	Функция по умолчанию, переход начинается медленно, разгоняется быстро и замедляется в конце. Соответствует cubic-bezier(0.25,0.1,0.25,1).
+            linear	Переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Соответствует cubic-bezier(0,0,1,1).
+            ease-in	Переход начинается медленно, а затем плавно ускоряется в конце. Соответствует cubic-bezier(0.42,0,1,1).
+            ease-out	Переход начинается быстро и плавно замедляется в конце. Соответствует cubic-bezier(0,0,0.58,1).
+            ease-in-out	Переход медленно начинается и медленно заканчивается. Соответствует cubic-bezier(0.42,0,0.58,1).
+            cubic-bezier(x1, y1, x2, y2)	Позволяет вручную установить значения от 0 до 1 для кривой ускорения. На этом сайте вы сможете построить любую траекторию перехода.
+            initial	Устанавливает значение свойства в значение по умолчанию.
+            inherit	Наследует значение свойства от родительского элемента.*/
+            }
+        }
+    }
+}
+
 .artem {
     color: #fff;
     .widthContainerMax;
@@ -431,6 +515,9 @@ header {
             width: 48.5%;
             margin-bottom: 3%;
         }
+        @media (max-width: @smallScreen) {
+            width: 100%;
+        }
     }
     .center {
         display: flex;
@@ -445,78 +532,68 @@ header {
     }
 }
 
-.doe {
-    display: flex;
-    justify-content: space-between;
-}
-
-figure {
-    width: 22%;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, .1);
-    .fotoDoe {
-        position: relative;
-        height: auto;
-        &:hover .insideHover {
-            opacity: 1;
-        }
-        &:hover + figcaption {
-            background-color: @mainColor;
-        }
-        &:hover + figcaption p {
+.commentBlock {
+    text-align: center;
+    .comment {
+        text-align: center;
+        margin-bottom: 80px;
+        .commentText {
+            position: relative;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, .5);
+            border-radius: 10px;
             color: #fff;
+            transition: all .3s ease-in-out;
+            line-height: 30px;
+            font-size: 16px;
+            position: relative;
+            margin: 0 114px 30px 114px;
+            @media (max-width: @mediumScreen) {
+                margin: 0 0 30px 0;
+            }
+            &:before {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                font-family: "Font Awesome\ 5 Free";
+                font-weight: 900;
+                font-size: 60px;
+                line-height: 60px;
+                content: "\f10d";
+                color: rgba(0, 0, 0, .2);
+                transition: all .3s ease-in-out;
+            }
+            .quadraForm {
+                position: absolute;
+                left: 50%;
+                margin-left: -20px;
+                bottom: -20px;
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid rgba(255, 255, 255, .5);
+                transition: all .3s ease-in-out;
+            }
         }
-        img {
-            width: 100%;
-        }
-        .insideHover {
-            opacity: 0;
-            position: absolute;
-            top: 0;
-            transition: .4s;
+        figcaption {
+            font-size: 13px;
             color: #fff;
-            font-size: 35px;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            background-color: rgba(185, 70, 173, .4);
-            i {
-                margin-top: 43%;
+            h6 {
+                font-family: Georgia, "Times New Roman", Times, serif;
+                font-size: 20px;
             }
         }
     }
-    figcaption {
-        background-color: #fff;
-        text-align: center;
-        padding: 20px 0;
-        margin-top: -2px;
-        transition: .4s;
-        p {
-            transition: .5s .7s;
-        }
-        p:first-child {
-            font-size: 20px;
-        }
-        animation-name: mymove;
-        &:hover {
-            background-color: @mainColor;
-        }
-        &:hover p {
-            color: #fff;
-            /*transition-property: color;----------------------*/
-            /*изменяемый параметр, можно не указывать, по-умолчанию все параметры.*/
-            /*transition-duration: .5s;------------------------*/
-            /*Продолжительность перехода*/
-            /*transition-delay: .7s;----------------------------*/
-            /*Задержка перехода*/
-            /*transition-timing-function: ease-in-out;-----------*/
-            /*ease	Функция по умолчанию, переход начинается медленно, разгоняется быстро и замедляется в конце. Соответствует cubic-bezier(0.25,0.1,0.25,1).
-            linear	Переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Соответствует cubic-bezier(0,0,1,1).
-            ease-in	Переход начинается медленно, а затем плавно ускоряется в конце. Соответствует cubic-bezier(0.42,0,1,1).
-            ease-out	Переход начинается быстро и плавно замедляется в конце. Соответствует cubic-bezier(0,0,0.58,1).
-            ease-in-out	Переход медленно начинается и медленно заканчивается. Соответствует cubic-bezier(0.42,0,0.58,1).
-            cubic-bezier(x1, y1, x2, y2)	Позволяет вручную установить значения от 0 до 1 для кривой ускорения. На этом сайте вы сможете построить любую траекторию перехода.
-            initial	Устанавливает значение свойства в значение по умолчанию.
-            inherit	Наследует значение свойства от родительского элемента.*/
-        }
+}
+
+.commentSection:hover .commentText {
+    color: #474747;
+    background-color: rgba(255, 255, 255, 1);
+    .quadraForm {
+        border-top: 20px solid rgba(255, 255, 255, 1);
+    }
+    &:before {
+        color: rgba(0, 0, 0, 0);
     }
 }

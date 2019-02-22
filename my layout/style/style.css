@@ -37,6 +37,22 @@ body {
     padding-right: 15px;
   }
 }
+button {
+  border: none;
+  outline: none;
+  background-color: #b946ad;
+  padding: 12px 26px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: .2s;
+  border: 1px solid #b946ad;
+}
+button:hover {
+  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
 header {
   width: 100%;
   background-color: #161c21;
@@ -251,21 +267,10 @@ header {
   font-size: 14px;
   margin-bottom: 45px;
 }
-.centralText button {
-  border: none;
-  outline: none;
-  background-color: #b946ad;
-  padding: 12px 26px;
-  color: #fff;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 14px;
-  transition: .2s;
-  border: 1px solid #b946ad;
-}
-.centralText button:hover {
-  border: 1px solid #fff;
-  background-color: rgba(0, 0, 0, 0.3);
+@media (max-width: 768px) {
+  .centralText p:nth-child(2) {
+    margin: 0;
+  }
 }
 .headFoto {
   width: 1140px;
@@ -497,8 +502,7 @@ header {
 .nullaEu {
   width: 1140px;
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 30px;
+  padding: 80px 0;
 }
 @media (max-width: 1200px) {
   .nullaEu {
@@ -550,6 +554,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: -50px;
 }
 .nullaEu .nullaEuFoto .nullaEuImg {
   height: 260px;
@@ -587,6 +592,87 @@ header {
 .nullaEu .nullaEuFoto .nullaEuImg .insideHover i {
   opacity: 0;
   transition: .5s;
+}
+.doe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.doe figure {
+  width: 22%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .doe figure {
+    width: 47%;
+    margin-bottom: 40px;
+  }
+}
+.doe figure .fotoDoe {
+  position: relative;
+  height: auto;
+}
+.doe figure .fotoDoe:hover .insideHover {
+  opacity: 1;
+}
+.doe figure .fotoDoe:hover + figcaption {
+  background-color: #b946ad;
+}
+.doe figure .fotoDoe:hover + figcaption p {
+  color: #fff;
+}
+.doe figure .fotoDoe img {
+  width: 100%;
+}
+.doe figure .fotoDoe .insideHover {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transition: .4s;
+  color: #fff;
+  font-size: 35px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: rgba(185, 70, 173, 0.4);
+}
+.doe figure .fotoDoe .insideHover i {
+  margin-top: 43%;
+}
+.doe figure figcaption {
+  background-color: #fff;
+  text-align: center;
+  padding: 6% 0;
+  margin-top: -2px;
+  transition: .4s;
+  animation-name: mymove;
+}
+.doe figure figcaption p {
+  transition: .5s .7s;
+}
+.doe figure figcaption p:first-child {
+  font-size: 20px;
+}
+.doe figure figcaption:hover {
+  background-color: #b946ad;
+}
+.doe figure figcaption:hover p {
+  color: #fff;
+  /*transition-property: color;----------------------*/
+  /*изменяемый параметр, можно не указывать, по-умолчанию все параметры.*/
+  /*transition-duration: .5s;------------------------*/
+  /*Продолжительность перехода*/
+  /*transition-delay: .7s;----------------------------*/
+  /*Задержка перехода*/
+  /*transition-timing-function: ease-in-out;-----------*/
+  /*ease	Функция по умолчанию, переход начинается медленно, разгоняется быстро и замедляется в конце. Соответствует cubic-bezier(0.25,0.1,0.25,1).
+            linear	Переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Соответствует cubic-bezier(0,0,1,1).
+            ease-in	Переход начинается медленно, а затем плавно ускоряется в конце. Соответствует cubic-bezier(0.42,0,1,1).
+            ease-out	Переход начинается быстро и плавно замедляется в конце. Соответствует cubic-bezier(0,0,0.58,1).
+            ease-in-out	Переход медленно начинается и медленно заканчивается. Соответствует cubic-bezier(0.42,0,0.58,1).
+            cubic-bezier(x1, y1, x2, y2)	Позволяет вручную установить значения от 0 до 1 для кривой ускорения. На этом сайте вы сможете построить любую траекторию перехода.
+            initial	Устанавливает значение свойства в значение по умолчанию.
+            inherit	Наследует значение свойства от родительского элемента.*/
 }
 .artem {
   color: #fff;
@@ -630,6 +716,11 @@ header {
     margin-bottom: 3%;
   }
 }
+@media (max-width: 576px) {
+  .artem .testArtem {
+    width: 100%;
+  }
+}
 .artem .center {
   display: flex;
   flex-wrap: wrap;
@@ -641,77 +732,68 @@ header {
   width: 32%;
   background-color: #262626;
 }
-.doe {
-  display: flex;
-  justify-content: space-between;
+.commentBlock {
+  text-align: center;
 }
-figure {
-  width: 22%;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+.commentBlock .comment {
+  text-align: center;
+  margin-bottom: 80px;
 }
-figure .fotoDoe {
+.commentBlock .comment .commentText {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  line-height: 30px;
+  font-size: 16px;
   position: relative;
-  height: auto;
+  margin: 0 114px 30px 114px;
 }
-figure .fotoDoe:hover .insideHover {
-  opacity: 1;
+@media (max-width: 768px) {
+  .commentBlock .comment .commentText {
+    margin: 0 0 30px 0;
+  }
 }
-figure .fotoDoe:hover + figcaption {
-  background-color: #b946ad;
-}
-figure .fotoDoe:hover + figcaption p {
-  color: #fff;
-}
-figure .fotoDoe img {
-  width: 100%;
-}
-figure .fotoDoe .insideHover {
-  opacity: 0;
+.commentBlock .comment .commentText:before {
   position: absolute;
-  top: 0;
-  transition: .4s;
+  top: 10px;
+  left: 10px;
+  font-family: "Font Awesome\ 5 Free";
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 60px;
+  content: "\f10d";
+  color: rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.commentBlock .comment .commentText .quadraForm {
+  position: absolute;
+  left: 50%;
+  margin-left: -20px;
+  bottom: -20px;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+.commentBlock .comment figcaption {
+  font-size: 13px;
   color: #fff;
-  font-size: 35px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  background-color: rgba(185, 70, 173, 0.4);
 }
-figure .fotoDoe .insideHover i {
-  margin-top: 43%;
-}
-figure figcaption {
-  background-color: #fff;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: -2px;
-  transition: .4s;
-  animation-name: mymove;
-}
-figure figcaption p {
-  transition: .5s .7s;
-}
-figure figcaption p:first-child {
+.commentBlock .comment figcaption h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 20px;
 }
-figure figcaption:hover {
-  background-color: #b946ad;
+.commentSection:hover .commentText {
+  color: #474747;
+  background-color: #ffffff;
 }
-figure figcaption:hover p {
-  color: #fff;
-  /*transition-property: color;----------------------*/
-  /*изменяемый параметр, можно не указывать, по-умолчанию все параметры.*/
-  /*transition-duration: .5s;------------------------*/
-  /*Продолжительность перехода*/
-  /*transition-delay: .7s;----------------------------*/
-  /*Задержка перехода*/
-  /*transition-timing-function: ease-in-out;-----------*/
-  /*ease	Функция по умолчанию, переход начинается медленно, разгоняется быстро и замедляется в конце. Соответствует cubic-bezier(0.25,0.1,0.25,1).
-            linear	Переход происходит равномерно на протяжении всего времени, без колебаний в скорости. Соответствует cubic-bezier(0,0,1,1).
-            ease-in	Переход начинается медленно, а затем плавно ускоряется в конце. Соответствует cubic-bezier(0.42,0,1,1).
-            ease-out	Переход начинается быстро и плавно замедляется в конце. Соответствует cubic-bezier(0,0,0.58,1).
-            ease-in-out	Переход медленно начинается и медленно заканчивается. Соответствует cubic-bezier(0.42,0,0.58,1).
-            cubic-bezier(x1, y1, x2, y2)	Позволяет вручную установить значения от 0 до 1 для кривой ускорения. На этом сайте вы сможете построить любую траекторию перехода.
-            initial	Устанавливает значение свойства в значение по умолчанию.
-            inherit	Наследует значение свойства от родительского элемента.*/
+.commentSection:hover .commentText .quadraForm {
+  border-top: 20px solid #ffffff;
+}
+.commentSection:hover .commentText:before {
+  color: rgba(0, 0, 0, 0);
 }
