@@ -33,8 +33,7 @@ body {
 @media (max-width: 576px) {
   .widthContainerMax {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 button {
@@ -81,8 +80,7 @@ button:hover {
 @media (max-width: 576px) {
   .sectionWidth {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 .sectionHead {
@@ -179,8 +177,7 @@ header {
 @media (max-width: 576px) {
   .headContainer {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 .headContainer address {
@@ -274,8 +271,7 @@ header {
 @media (max-width: 576px) {
   .navBackground nav {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 @media (max-width: 768px) {
@@ -348,8 +344,7 @@ header {
 @media (max-width: 576px) {
   .centralText {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 .centralText p:nth-child(1) {
@@ -395,8 +390,7 @@ header {
 @media (max-width: 576px) {
   .headFoto {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 @media (max-width: 1200px) {
@@ -502,8 +496,7 @@ header {
 @media (max-width: 576px) {
   .hr {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 .posuere {
@@ -532,8 +525,7 @@ header {
 @media (max-width: 576px) {
   .posuere {
     width: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 }
 .posuere .posuereImg {
@@ -650,6 +642,7 @@ header {
 .doe figure .fotoDoe {
   position: relative;
   height: auto;
+  line-height: 0;
 }
 .doe figure .fotoDoe:hover + figcaption {
   background-color: #b946ad;
@@ -684,7 +677,6 @@ header {
   background-color: #fff;
   text-align: center;
   padding: 6% 0;
-  margin-top: -2px;
   transition: .4s;
   animation-name: mymove;
 }
@@ -822,8 +814,14 @@ header {
 .adminCommentsBlock article {
   width: 30%;
 }
+@media (max-width: 768px) {
+  .adminCommentsBlock article {
+    width: 100%;
+  }
+}
 .adminCommentsBlock article .adminImg {
   position: relative;
+  line-height: 0;
 }
 .adminCommentsBlock article .adminImg img {
   width: 100%;
@@ -843,6 +841,7 @@ header {
 .adminCommentsBlock article .timeText {
   display: flex;
   align-items: flex-start;
+  margin-top: 15px;
 }
 .adminCommentsBlock article .timeText time {
   background-color: antiquewhite;
@@ -854,8 +853,206 @@ header {
 }
 .adminCommentsBlock article .timeText time p:first-child {
   font-size: 20px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
 }
 .adminCommentsBlock article .timeText time p:nth-child(2) {
   font-size: 16px;
+}
+.adminCommentsBlock article .timeText .text {
+  color: #fff;
+  margin: 0 0 0 10px;
+}
+.adminCommentsBlock article .timeText .text p:first-child {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+.adminCommentsBlock article .timeText .text p:nth-child(2) {
+  font-size: 14px;
+}
+.adminCommentsBlock button {
+  float: right;
+  margin-top: 20px;
+}
+@media (max-width: 768px) {
+  .adminCommentsBlock button {
+    margin: 0 0 30px 0;
+  }
+}
+.contactsBcg {
+  background-color: #94388a;
+}
+.contacts {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .contacts {
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .contacts {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .contacts {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .contacts {
+    width: auto;
+    padding: 0 15px;
+  }
+}
+.contacts address,
+.contacts div {
+  position: relative;
+  padding-left: 60px;
+  font-size: 14px;
+  line-height: 22.5px;
+  font-style: normal;
+  width: 23%;
+}
+@media (max-width: 768px) {
+  .contacts address,
+  .contacts div {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+.contacts address:hover a,
+.contacts div:hover a {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+.contacts address:hover strong:before,
+.contacts div:hover strong:before {
+  opacity: 1;
+}
+.contacts a {
+  color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  left: 0;
+  line-height: 43px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  font-size: 16px;
+}
+.contacts a i {
+  transition: all 0.3s ease-in-out 0.07s;
+}
+.contacts .comeUs strong:before {
+  font-family: "Font Awesome\ 5 Free";
+  content: "\f3c5";
+  font-size: 16px;
+  transition: all 0.3s ease-in-out 0.3s;
+  padding: 11px 16.5px;
+  position: absolute;
+  left: 0;
+  opacity: .4;
+}
+.footerColumns {
+  width: 1140px;
+  margin: 0 auto;
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 1200px) {
+  .footerColumns {
+    width: 960px;
+  }
+}
+@media (max-width: 992px) {
+  .footerColumns {
+    width: 720px;
+  }
+}
+@media (max-width: 768px) {
+  .footerColumns {
+    width: 540px;
+  }
+}
+@media (max-width: 576px) {
+  .footerColumns {
+    width: auto;
+    padding: 0 15px;
+  }
+}
+.footerColumns .columnFooter {
+  width: 23%;
+}
+.footerColumns h6 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+  margin-bottom: 50px;
+}
+.footerColumns ul {
+  list-style-type: none;
+  font-size: 14px;
+  color: #b946ad;
+}
+.footerColumns ul li {
+  font-style: bold;
+  line-height: 23px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.footerColumns p {
+  color: #A5A6AA;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 23px;
+}
+.footerColumns input {
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+.footerColumns div:nth-child(3) p {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+.footerColumns a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #b946ad;
+}
+.footerColumns .footerImg {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footerColumns .footerImg .imgHov {
+  width: 30%;
+  margin-bottom: 10px;
+}
+.footerColumns .footerImg .imgHov:after {
+  font-family: "Font Awesome\ 5 Free";
+  content: "\f067";
+  font-size: 18px;
+  position: absolute;
+}
+.footerColumns .footerImg img {
+  width: 100%;
 }
